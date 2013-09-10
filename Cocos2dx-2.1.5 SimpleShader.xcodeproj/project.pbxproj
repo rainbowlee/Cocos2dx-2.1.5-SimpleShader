@@ -279,8 +279,11 @@
 		BE86F72B17DFA0D4000632CB /* cpVect.c in Sources */ = {isa = PBXBuildFile; fileRef = BE86F72A17DFA0D4000632CB /* cpVect.c */; };
 		BE86F73317DFA0D4000632CB /* libwebsockets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE86F73217DFA0D4000632CB /* libwebsockets.a */; };
 		BE86F73917DFA0D4000632CB /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE86F73817DFA0D4000632CB /* AppDelegate.cpp */; };
-		BE86F73C17DFA0D4000632CB /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE86F73B17DFA0D4000632CB /* HelloWorldScene.cpp */; };
 		BE86F73E17DFA0D4000632CB /* grossini_dance_atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = BE86F73D17DFA0D4000632CB /* grossini_dance_atlas.png */; };
+		BE86F74817DFA108000632CB /* SimpleShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE86F74417DFA108000632CB /* SimpleShader.cpp */; };
+		BE86F74D17DFA142000632CB /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE86F74B17DFA142000632CB /* HelloWorldScene.cpp */; };
+		BE86F75117DFA1D8000632CB /* simpleShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = BE86F75017DFA1D8000632CB /* simpleShader.fsh */; };
+		BE86F75317DFA224000632CB /* simpleShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = BE86F75217DFA224000632CB /* simpleShader.vsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -872,9 +875,13 @@
 		BE86F73517DFA0D4000632CB /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		BE86F73717DFA0D4000632CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		BE86F73817DFA0D4000632CB /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
-		BE86F73A17DFA0D4000632CB /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
-		BE86F73B17DFA0D4000632CB /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
 		BE86F73D17DFA0D4000632CB /* grossini_dance_atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grossini_dance_atlas.png; path = Resources/grossini_dance_atlas.png; sourceTree = "<group>"; };
+		BE86F74417DFA108000632CB /* SimpleShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleShader.cpp; sourceTree = "<group>"; };
+		BE86F74617DFA108000632CB /* SimpleShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleShader.h; sourceTree = "<group>"; };
+		BE86F74B17DFA142000632CB /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
+		BE86F74C17DFA142000632CB /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
+		BE86F75017DFA1D8000632CB /* simpleShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = simpleShader.fsh; sourceTree = "<group>"; };
+		BE86F75217DFA224000632CB /* simpleShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = simpleShader.vsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2096,10 +2103,14 @@
 		BE86F73617DFA0D4000632CB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BE86F74B17DFA142000632CB /* HelloWorldScene.cpp */,
+				BE86F74C17DFA142000632CB /* HelloWorldScene.h */,
 				BE86F73717DFA0D4000632CB /* AppDelegate.h */,
 				BE86F73817DFA0D4000632CB /* AppDelegate.cpp */,
-				BE86F73A17DFA0D4000632CB /* HelloWorldScene.h */,
-				BE86F73B17DFA0D4000632CB /* HelloWorldScene.cpp */,
+				BE86F74617DFA108000632CB /* SimpleShader.h */,
+				BE86F74417DFA108000632CB /* SimpleShader.cpp */,
+				BE86F75217DFA224000632CB /* simpleShader.vsh */,
+				BE86F75017DFA1D8000632CB /* simpleShader.fsh */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2168,6 +2179,8 @@
 				BE86F45B17DFA0CD000632CB /* ChangeLog in Resources */,
 				BE86F5CF17DFA0D1000632CB /* project.pbxproj in Resources */,
 				BE86F73E17DFA0D4000632CB /* grossini_dance_atlas.png in Resources */,
+				BE86F75117DFA1D8000632CB /* simpleShader.fsh in Resources */,
+				BE86F75317DFA224000632CB /* simpleShader.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2426,7 +2439,8 @@
 				BE86F72917DFA0D4000632CB /* cpSweep1D.c in Sources */,
 				BE86F72B17DFA0D4000632CB /* cpVect.c in Sources */,
 				BE86F73917DFA0D4000632CB /* AppDelegate.cpp in Sources */,
-				BE86F73C17DFA0D4000632CB /* HelloWorldScene.cpp in Sources */,
+				BE86F74817DFA108000632CB /* SimpleShader.cpp in Sources */,
+				BE86F74D17DFA142000632CB /* HelloWorldScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

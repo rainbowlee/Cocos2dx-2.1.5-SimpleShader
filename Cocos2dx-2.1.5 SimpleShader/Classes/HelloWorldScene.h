@@ -1,8 +1,8 @@
 //
 //  HelloWorldScene.h
-//  Cocos2dx-2.1.5 SimpleShader
+//  testCocos2dx-2.1.5
 //
-//  Created by Tjaz Hrovat on 9/10/13.
+//  Created by Tjaz Hrovat on 9/7/13.
 //  Copyright __MyCompanyName__ 2013. All rights reserved.
 //
 
@@ -20,7 +20,7 @@ public:
     ChipmunkPhysicsSprite();
     virtual ~ChipmunkPhysicsSprite();
     void setPhysicsBody(cpBody* body);
-    virtual bool isDirty(void);
+    virtual bool isDirty(void);    
     virtual cocos2d::CCAffineTransform nodeToParentTransform(void);
 private:
     cpBody* m_pBody;    // strong ref
@@ -34,7 +34,7 @@ public:
     bool init();
     static cocos2d::CCScene* scene();
     CREATE_FUNC(HelloWorld);
-    
+    void right(CCObject* obj);
     void initPhysics();
     void addNewSpriteAtPosition(cocos2d::CCPoint p);
     void update(float dt);

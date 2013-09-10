@@ -1,14 +1,15 @@
 //
 //  HelloWorldScene.cpp
-//  Cocos2dx-2.1.5 SimpleShader
+//  testCocos2dx-2.1.5
 //
-//  Created by Tjaz Hrovat on 9/10/13.
+//  Created by Tjaz Hrovat on 9/7/13.
 //  Copyright __MyCompanyName__ 2013. All rights reserved.
 //
 
 
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
+#include "SimpleShader.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -140,10 +141,15 @@ bool HelloWorld::init()
     addNewSpriteAtPosition(ccp(200,200));
 
     scheduleUpdate();
+    
+    // simple shader
+    SimpleShader *simpleShader = new SimpleShader;
+    simpleShader->init();    
+    simpleShader->setZOrder(-1);
+    addChild(simpleShader);
 
     return true;
 }
-
 
 void HelloWorld::initPhysics()
 {
