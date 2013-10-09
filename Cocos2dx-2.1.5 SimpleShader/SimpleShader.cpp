@@ -37,9 +37,9 @@ bool SimpleShader::init() {
     
     CHECK_GL_ERROR_DEBUG();
     
-    shaderProg->link();
     shaderProg->addAttribute(kCCAttributeNamePosition, kCCVertexAttrib_Position);
     shaderProg->addAttribute(kCCAttributeNameColor, kCCVertexAttrib_Color);
+    shaderProg->link();
     
     CHECK_GL_ERROR_DEBUG();
     
@@ -56,9 +56,6 @@ void SimpleShader::draw() {
     glEnable(GL_CULL_FACE);
     getShaderProgram()->use();
     getShaderProgram()->setUniformsForBuiltins();
-    
-    CCPoint p = getPosition();
-    CCSize s = getContentSize();
         
     int vertSize = sizeof(quad.tl); // ccVertex2F & ccVertex4B
     long offset = (long)&quad;
